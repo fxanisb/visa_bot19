@@ -63,7 +63,7 @@ send_telegram("🤖 Bot started checking appointments")
 # =====================
 # checking loop
 # =====================
-
+driver.get("https://appointment.mosaicvisa.com/calendar/9")
 while True:
 
     try:
@@ -98,6 +98,7 @@ while True:
         print("Error:", e)
 
         time.sleep(50)
+
 
 
 
