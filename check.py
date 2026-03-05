@@ -32,9 +32,16 @@ options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
-service = Service(ChromeDriverManager().install())
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Chrome(service=service, options=options)
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
+driver = webdriver.Chrome(options=options)
+
 
 wait = WebDriverWait(driver, 20)
 
@@ -95,4 +102,5 @@ while True:
         print("Error:", e)
 
         time.sleep(50)
+
 
