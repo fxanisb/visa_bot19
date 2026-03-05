@@ -40,6 +40,12 @@ options.add_argument("--disable-gpu")
 
 service = Service("/usr/bin/chromedriver")
 
+from selenium.webdriver.chrome.service import Service
+
+options.binary_location = "/usr/bin/chromium"
+
+service = Service("/usr/bin/chromedriver")
+
 driver = webdriver.Chrome(service=service, options=options)
 
 wait = WebDriverWait(driver, 20)
@@ -101,6 +107,7 @@ while True:
         print("Error:", e)
 
         time.sleep(50)
+
 
 
 
