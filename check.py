@@ -27,10 +27,6 @@ def send_telegram(message):
 # Chrome settings
 # =====================
 
-options = Options()
-options.add_argument("--headless")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -102,5 +98,6 @@ while True:
         print("Error:", e)
 
         time.sleep(50)
+
 
 
