@@ -27,26 +27,21 @@ def send_telegram(message):
 # Chrome settings
 # =====================
 
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
 options = Options()
+options.binary_location = "/usr/bin/chromium"
+
 options.add_argument("--headless=new")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--disable-gpu")
-options.add_argument("--disable-dev-tools")
-options.add_argument("--remote-debugging-port=9222")
 
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-import os
-os.environ["WDM_LOG_LEVEL"] = "0"
-service = Service(ChromeDriverManager().install())
+service = Service("/usr/bin/chromedriver")
 
 driver = webdriver.Chrome(service=service, options=options)
-
 
 wait = WebDriverWait(driver, 20)
 
@@ -107,6 +102,7 @@ while True:
         print("Error:", e)
 
         time.sleep(50)
+
 
 
 
