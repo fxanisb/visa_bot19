@@ -12,7 +12,7 @@ import time
 # Telegram settings
 # =====================
 
-TOKEN = 8711953337:AAGsLQ1DgUGnwCKl4-mrcNnQAyLDCoRtw9Y
+TOKEN = "8711953337:AAGsLQ1DgUGnwCKl4-mrcNnQAyLDCoRtw9Y"
 CHAT_ID = "5898450345"
 
 def send_telegram(message):
@@ -95,3 +95,4 @@ while True:
         print("Error:", e)
 
         time.sleep(50)
+
